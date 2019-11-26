@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define VIDE 0
-#define PLEINE 1
-
-
+#define EAU 0
+#define TIR_DANS_L_EAU 1
+#define BATEAU 2
+#define BATEAU_TOUCHE 3
 
 
 
