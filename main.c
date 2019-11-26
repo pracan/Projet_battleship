@@ -43,7 +43,7 @@ void recupGrille(int L,int H,Grille grille){
   fclose(fp);
 }
 
-void afficherGrille(int L, int H, int **grille){
+void afficherGrille(int L, int H, Grille grille){
 	int a=65;
   printf("  ");
   for (int i=0; i<L;i++) {
@@ -65,7 +65,7 @@ void afficherGrille(int L, int H, int **grille){
           printf("%c ",35);
           break;
         case 3:
-          printf("%c ",157);
+          printf("%c ",36);
           break;
       }
 		}
@@ -73,9 +73,14 @@ void afficherGrille(int L, int H, int **grille){
 	}
 }
 
+int comptebatteaux(){
+
+  return 0;
+}
+
 int main(int argc, char **argv) {
 	int L,H;
-	int **grille;
+	Grille grille;
 
 	printf("Longueur ?\n");
 	scanf("%d",&L);
