@@ -73,7 +73,7 @@ void afficherGrille(int L, int H, Grille grille){
 	}
 }
 
-int comptebatteaux(int L, int H, Grille grille){
+int comptecasebatteaux(int L, int H, Grille grille){
   int a=0,b=0;
 	for (int i=0; i<L;i++) {
 		for (int j=0; j<H;j++){
@@ -108,7 +108,6 @@ int comptebatteaux(int L, int H, Grille grille){
   } else {
     return a;
   }
-  
 }
 
 int main(int argc, char **argv) {
