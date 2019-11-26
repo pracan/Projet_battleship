@@ -73,9 +73,42 @@ void afficherGrille(int L, int H, Grille grille){
 	}
 }
 
-int comptebatteaux(){
-
-  return 0;
+int comptebatteaux(int L, int H, Grille grille){
+  int a=0,b=0;
+	for (int i=0; i<L;i++) {
+		for (int j=0; j<H;j++){
+      if (grille[i][j]==3){
+        if (j<(H-1)){if (grille[i][j+1]==3){
+          if (i>0){if (grille[i-1][j]==3){b=-1;}}
+          if (i<L-1){if (grille[i+1][j]==3){b=-1;}}
+        }}
+        if (j>0){if (grille[i][j-1]==3){
+          if (i>0){if (grille[i-1][j]==3){b=-1;}}
+          if (i<L-1){if (grille[i+1][j]==3){b=-1;}}
+        }}
+        if (i<(L-1)){if (grille[i+1][j]==3){
+          if (j>0){if (grille[i][j-1]==3){b=-1;}}
+          if (j<L-1){if (grille[i][j+1]==3){b=-1;}}
+        }}
+        if (i>0){if (grille[i-1][j]==3){
+          if (j>0){if (grille[i][j-1]==3){b=-1;}}
+          if (i<L-1){if (grille[i][j+1]==3){b=-1;}}
+        }}
+        if (b==-1){
+          break;
+          break;
+        } else {
+          a+=1;
+        }
+      }
+		}
+	}
+  if (b==-1){
+    return b;
+  } else {
+    return a;
+  }
+  
 }
 
 int main(int argc, char **argv) {
