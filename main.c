@@ -21,15 +21,19 @@ void creerGrille (int L, int H, int **grille) {
 }
 
 void afficherGrille(int L, int H, int **grille){
-	
+	int a=65;
+  printf("  ");
   for (int i=0; i<L;i++) {
     printf("%d ",i+1);
   }
   printf("\n");
 
+
 	for (int i=1; i<=L-1;i++) {
-		for (int j=0; j<=H-1;j++){
-			if (grille[i][j]==0) {
+		printf("%c ", a);
+    a+=1;
+    for (int j=0; j<=H-1;j++){
+      if (grille[i][j]==0) {
 				printf(". ");
 			}
 			else {
