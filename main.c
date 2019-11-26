@@ -32,6 +32,8 @@ void afficherGrille(int L, int H, int **grille){
 		}
 	printf("\n");
 	}
+
+  printf(grille[1[0]);
 }
 
 int main(int argc, char **argv) {
@@ -50,6 +52,6 @@ int main(int argc, char **argv) {
 
 	creerGrille(L,H,grille);
 	afficherGrille(L,H,grille);
-  printf(grille[0]);
+  
 	return 0;
 }
