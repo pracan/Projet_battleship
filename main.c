@@ -21,17 +21,20 @@ void creerGrille (int L, int H, Grille grille) {
 void recupGrille(int L,int H,Grille grille){
   FILE *fp;
   char buff[255];
-  int a=1,b;
+  int a=0,b;
 
   creerGrille(L,H,grille);
   fp = fopen("batteau.txt", "r");
-  while ( fgets(buff, 255, (FILE*)fp) != NULL){
+  printf("Le fichier chargé contient les lignes\n\n");
+  while (( fgets(buff, 255, (FILE*)fp) != NULL)&&(a<L)){
     b=0;
-    while ((buff[b]!=10)&&(buff[b]!=0)&&(b<255)){
-      printf("%d: %d\n", b, buff[b]);
+    while ((buff[b]!=10)&&(buff[b]!=0)&&(b<255)&&(b<H)){
+      if ((buff[b]!=46)&&(buff[b]!=32)){
+          grille[a][b]=2;
+      }
       b+=1;
     };
-    printf("%d: %s\n", a, buff);
+    printf("%s", buff);
     if (buff[b]==0){printf("\n");}
     a+=1;
   }
@@ -59,10 +62,10 @@ void afficherGrille(int L, int H, int **grille){
           printf("X");
           break;
         case 2:
-          printf("%c",254);
+          printf("%c ",35);
           break;
         case 3:
-          printf("%c",157);
+          printf("%c ",157);
           break;
       }
 		}
@@ -74,7 +77,7 @@ int main(int argc, char **argv) {
 	int L,H;
 	int **grille;
 
-	printf(" Longueur ?\n");
+	printf("Longueur ?\n");
 	scanf("%d",&L);
 	printf("Hauteur ?\n");
 	scanf("%d",&H);
