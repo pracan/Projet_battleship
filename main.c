@@ -1,26 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define VIDE 0
-#define PLEINE 1
+#define EAU 0
+#define TIR_DANS_L_EAU 1
+#define BATEAU 2
+#define BATEAU_TOUCHE 3
 
 
 
 
-
-void creerGrille (int L, int H, int **grille) {
+void creerGrille (int L, int H, int **grille1, **grille2) {
 	int o;
   int a;
 
+  printf("Grille du joueur 1")
 	for (int i=1; i<=L-1;i++){
 		for (int j=0;j<=H-1;j++) {
-			grille[i][j]=0;
+			grille1[i][j]=0;
 		}
 	}
 
 }
 
-void afficherGrille(int L, int H, int **grille){
+void afficherGrille(int L, int H, int **grille1, int **grille2){
 	int a=65;
   printf("  ");
   for (int i=0; i<L;i++) {
@@ -44,18 +46,28 @@ void afficherGrille(int L, int H, int **grille){
 	}
 }
 
+void joueur (int **grille1, int **grille2, int L, int H) {
+  
+}
+
 int main(int argc, char **argv) {
 	int L,H;
-	int **grille;
+	int **grille1;
+  int **grille2;
 	
 	printf(" Longueur ?\n");
 	scanf("%d",&L);
 	printf("Hauteur ?\n");
 	scanf("%d",&H);
 
-	grille = malloc(L*sizeof(int*));
+	grille1 = malloc(L*sizeof(int*));
 	for (int i=0;i<=H;i++){
-		grille[i]=malloc(H*sizeof(int));
+		grille1[i]=malloc(H*sizeof(int));
+	}
+
+  grille2 = malloc(L*sizeof(int*));
+	for (int i=0;i<=H;i++){
+		grille2[i]=malloc(H*sizeof(int));
 	}
 
 	creerGrille(L,H,grille);
