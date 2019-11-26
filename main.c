@@ -7,7 +7,32 @@
 #define BATEAU_TOUCHE 3
 
 
+void vide_buffer() {
+	int ch;
+	do {
+		ch = getchar();
+	} while (ch != '\n'&& ch != EOF);
+}
 
+void Saisir2nombre(){
+	int i,j,ok,nb_lue;
+	char term;
+	ok=0;
+	
+	do
+	{
+		printf("Veuillez saisir deux nombres: ");
+		nb_lue = scanf("%d%d%c",&i,&j,&term);
+		if(nb_lue== 3 || term == ('\n') || term==(' ')) {
+			printf("Vous avez saisi %d %d",i,j);
+		ok=1;
+		}
+		else{
+		vide_buffer();
+		printf("Veuillez réessayer\n");
+		}
+	}while (ok==0);
+}
 
 void creerGrille (int L, int H, int **grille1, **grille2) {
 	int o;
